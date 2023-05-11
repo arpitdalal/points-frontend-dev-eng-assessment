@@ -89,21 +89,6 @@ export default function Form() {
         }
       }
 
-      /**
-       * income = 36000
-       * tax_brackets = [
-       *  { min: 0, max: 10000, rate: 0.1 },
-       *  { min: 10000, max: 20000, rate: 0.2 },
-       *  { min: 20000, max: 30000, rate: 0.3 },
-       *  { min: 30000, max: 40000, rate: 0.4 },
-       * ]
-       * taxBreakdown = [
-       * { min: 0, max: 10000, rate: 0.1, tax: 1000 },
-       * { min: 10000, max: 20000, rate: 0.2, tax: 2000 },
-       * { min: 20000, max: 30000, rate: 0.3, tax: 3000 },
-       * { min: 30000, max: 36000, rate: 0.4, tax: 2400 },
-       * ]
-       */
       const taxBreakdown = taxBrackets.tax_brackets.map((bracket) => {
         const min = bracket.min;
         const max = bracket.max || Infinity;
@@ -127,8 +112,6 @@ export default function Form() {
           };
         }
       });
-
-      console.log(taxBreakdown);
 
       const cleanArrayOfTaxBreakdown = taxBreakdown.filter(Boolean);
 
