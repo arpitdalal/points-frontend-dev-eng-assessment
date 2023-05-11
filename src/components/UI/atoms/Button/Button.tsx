@@ -13,7 +13,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   loading?: boolean;
 }
 
-const StyleButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,10 +42,17 @@ const StyleButton = styled.button<ButtonProps>`
   }
 `;
 
-export default function Button({ children, loading, ...rest }: ButtonProps) {
+export default function Button({
+  children,
+  loading,
+  disabled,
+  ...props
+}: ButtonProps) {
+  const isDisabled = loading || disabled || false;
+
   return (
-    <StyleButton {...rest} disabled={loading}>
+    <StyledButton {...props} disabled={isDisabled}>
       {loading ? <LoadingSpinner size="20px" /> : children}
-    </StyleButton>
+    </StyledButton>
   );
 }

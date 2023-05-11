@@ -1,6 +1,6 @@
 import { ThemeProvider, type DefaultTheme } from "styled-components";
 
-const theme = {
+export const theme = {
   colors: {
     primary: "#b19cd9", // light purple color
     secondary: "#927fb6", // dark purple color

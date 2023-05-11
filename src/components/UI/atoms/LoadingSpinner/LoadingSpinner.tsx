@@ -48,7 +48,7 @@ const StyledLoadingSpinner = styled.div<LoadingSpinnerProps>`
 
 export default function LoadingSpinner(props: LoadingSpinnerProps) {
   return (
-    <StyledLoadingSpinnerWrapper {...props}>
+    <StyledLoadingSpinnerWrapper {...props} data-testid="loading-spinner">
       <StyledLoadingSpinner {...props} />
     </StyledLoadingSpinnerWrapper>
   );

@@ -11,6 +11,10 @@ const StyledLabel = styled.label<LabelProps>`
   margin-bottom: ${({ marginBottom = "8px" }) => marginBottom};
 `;
 
-export default function Label({ children, htmlFor }: LabelProps) {
-  return <StyledLabel htmlFor={htmlFor}>{children}</StyledLabel>;
+export default function Label({ children, htmlFor, ...props }: LabelProps) {
+  return (
+    <StyledLabel htmlFor={htmlFor} {...props}>
+      {children}
+    </StyledLabel>
+  );
 }

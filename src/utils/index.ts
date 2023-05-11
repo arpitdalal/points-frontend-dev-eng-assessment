@@ -28,7 +28,10 @@ export async function customFetch(
 }
 
 // format currency
-export function formatCurrency(value: number | string) {
+export function formatCurrency(
+  value: number | string,
+  fractionDigits?: number
+) {
   let numberValue = value;
   if (typeof numberValue === "string") {
     numberValue = Number(value);
@@ -37,5 +40,6 @@ export function formatCurrency(value: number | string) {
   return new Intl.NumberFormat("en-CA", {
     style: "currency",
     currency: "CAD",
+    maximumFractionDigits: fractionDigits === undefined ? 2 : fractionDigits,
   }).format(numberValue);
 }

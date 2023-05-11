@@ -2,7 +2,7 @@ import Text, { type TextProps } from "../../atoms/Text";
 
 export default function ErrorMessage({
   children,
-  fontSize = "14px",
+  fontSize = "16px",
   ...props
 }: Omit<TextProps, "color">) {
   return (

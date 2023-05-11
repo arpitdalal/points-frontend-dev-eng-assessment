@@ -1,3 +1,1 @@
-import LoadingSpinner, { type LoadingSpinnerProps } from "./LoadingSpinner";
-export type { LoadingSpinnerProps };
-export default LoadingSpinner;
+export { default, type LoadingSpinnerProps } from "./LoadingSpinner";
